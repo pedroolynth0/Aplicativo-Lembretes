@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "568A9C38-1FE6-492E-A82C-85FEC9D1CCF6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D38745B-BD2D-4F6B-A695-8A902F8D4988"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLembretesUITests/AppLembretesUITests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "AppLembretesUITests"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0D38745B-BD2D-4F6B-A695-8A902F8D4988 - 4aa56634feb5bcc0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppLembretesUITests.AppLembretesUITests.testTaskListVisibility() throws -&gt; ()"
+                  moduleName = "AppLembretesUITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroolyntho/Desktop/Lembretes/AppLembretes/AppLembretesUITests/AppLembretesUITests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  uuid = "0D38745B-BD2D-4F6B-A695-8A902F8D4988 - 4aa56634feb5bd0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppLembretesUITests.AppLembretesUITests.testTaskListVisibility() throws -&gt; ()"
+                  moduleName = "AppLembretesUITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroolyntho/Desktop/Lembretes/AppLembretes/AppLembretesUITests/AppLembretesUITests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  uuid = "0D38745B-BD2D-4F6B-A695-8A902F8D4988 - 4aa56634feb5bc82"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppLembretesUITests.AppLembretesUITests.testTaskListVisibility() throws -&gt; ()"
+                  moduleName = "AppLembretesUITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroolyntho/Desktop/Lembretes/AppLembretes/AppLembretesUITests/AppLembretesUITests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "594">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
