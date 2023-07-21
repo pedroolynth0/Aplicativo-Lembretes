@@ -26,11 +26,11 @@ class ViewModelLembrete: ObservableObject{
     //MARK: URL DA REQUISICAO
     
 /**
-    *var stringURL = "http://localhost:3333"  deve ser utilizada o servidor local estiver ativo
-    *var stringURL = "https://dtiapi--pedroaifail55.repl.co/"  essa url é utilizada para acessar api hospedada no replit caso essa url apresentar problemas tente rodar a api no servidor local e utilize  a outra url
+    *var stringURL = "http://localhost:3333"  deve ser utilizada quando o servidor local estiver ativo
+    *var stringURL = "https://dtiapi--pedroaifail55.repl.co/"  essa url é utilizada para acessar api hospedada no replit caso essa url apresentar problemas tente rodar a api no servidor local e utilize       a outra url
 */
-    //var stringURL = "http://localhost:3333"
-    var stringURL = "https://dtiapi--pedroaifail55.repl.co/"
+    var stringURL = "http://localhost:3333"
+    
 
     
     
