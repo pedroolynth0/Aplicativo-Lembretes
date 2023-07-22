@@ -9,11 +9,13 @@ import XCTest
 @testable import AppLembretes
 
 class ViewModelLembreteTests: XCTestCase {
-    // Mock URLSession para simular as respostas do servidor
+    // Mock URLSession para simula as respostas do servidor
     class MockURLSession: URLSession {
         var data: Data?
         var error: Error?
 
+        
+        //dataTask: define a lógica para responder a uma solicitação com os dados e erros pré-definidos
         override func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
             let mockDataTask = MockURLSessionDataTask()
             mockDataTask.data = data // Definindo a variável data do mockDataTask
@@ -22,7 +24,7 @@ class ViewModelLembreteTests: XCTestCase {
         }
     }
 
-    // Mock URLSessionDataTask para simular a execução da tarefa
+    // Mock URLSessionDataTask simula a execução da tarefa
     class MockURLSessionDataTask: URLSessionDataTask {
         var completionHandler: ((Data?, URLResponse?, Error?) -> Void)?
         var data: Data? // Definindo a variável data para a tarefa
@@ -39,7 +41,7 @@ class ViewModelLembreteTests: XCTestCase {
         let mockSession = MockURLSession()
         
         
-        // Crie um lembrete mock para ser retornado pelo mockSession
+        // Crie um lembrete mock (de teste) para ser retornado pelo mockSession
         let mockLembrete = LembreteModel(_id: "1", nome: "Lembrete de teste", descricao: "Descrição do lembrete de teste", data: "2023-07-20", status: true)
         let mockData = try? JSONEncoder().encode([mockLembrete])
 

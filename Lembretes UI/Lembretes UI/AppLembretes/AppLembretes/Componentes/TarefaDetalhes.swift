@@ -36,7 +36,6 @@ struct TarefaDetalhes: View {
                         
                     Text(lembrete.nome)
                         .font(.title3)
-                        .fontWeight(.bold)
                         .padding(.top,40.0)
                     .foregroundColor(.gray)
                     Spacer()
@@ -51,7 +50,6 @@ struct TarefaDetalhes: View {
                         .foregroundColor(Color(UIColor.darkGray))
                     Text(lembrete.descricao)
                         .font(.title3)
-                        .fontWeight(.bold)
                         .padding(.trailing)
                         
                     .foregroundColor(.gray)
@@ -68,7 +66,6 @@ struct TarefaDetalhes: View {
                         
                     Text(lembrete.data)
                         .font(.title3)
-                        .fontWeight(.bold)
                         .padding(.trailing)
                         
                     .foregroundColor(.gray)
