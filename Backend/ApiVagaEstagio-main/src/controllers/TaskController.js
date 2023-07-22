@@ -13,22 +13,24 @@ destroy: deletar alguma tarefa
 
 class TaskController{
     
-    //Listar lembretes ativos
-    async index(req, res){
-        const {status} = req.query;
-
-        // Encontre os lembretes ativos ordenados pela data 
+    async index(req, res) {
+        const { status } = req.query;
+    
+        // Encontre os lembretes ativos
         const lembretes = await Lembrete.find({ status });
-        lembretes.sort((a, b) => (a.data > b.data ? 1 : -1));
-        
-        // Formate a data para o formato "dd/MM/yyyy" antes de enviar a resposta
-        const lembretesFormatados = lembretes.map((lembrete) => ({
-        ...lembrete.toJSON(),
-        data: format(new Date(lembrete.data), 'dd/MM/yyyy HH:mm')
-        }));
-
+    
+        // Verifique se o array não é vazio antes de ordenar e formatar a data
+        const lembretesFormatados = lembretes && lembretes.length > 0
+          ? lembretes
+              .sort((a, b) => (a.data > b.data ? 1 : -1))
+              .map((lembrete) => ({
+                ...lembrete.toJSON(),
+                data: format(new Date(lembrete.data), 'dd/MM/yyyy HH:mm'),
+              }))
+          : [];
+    
         return res.json(lembretesFormatados);
-    }
+      }
 
     //Salvar lembrete no banco de dados
     async store(req,res){
