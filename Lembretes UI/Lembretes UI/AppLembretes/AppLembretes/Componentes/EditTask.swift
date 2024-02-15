@@ -10,15 +10,15 @@ import SwiftUI
 struct EditTask: View {
     
     //MARK: VARIAVEIS
-    var lembrete : LembreteModel
-    @StateObject var lembretes = ViewModelLembrete()
+    var lembrete : Reminder
+    @StateObject var viewModel = ViewModel()
     @State private var nome = ""
     @State private var descricao = ""
     @State private var data = Date()
     @State private var testeData = false
     @State private var testeNome = false
     @State private var alerta = false
-    init(lembrete: LembreteModel) {
+    init(lembrete: Reminder) {
         self.lembrete = lembrete
         _nome = State(initialValue: lembrete.nome)
         _descricao = State(initialValue: lembrete.descricao)
@@ -73,12 +73,12 @@ struct EditTask: View {
             Button {
                 //Verificar se os dados são validos
                 if(checkNome(nome: nome) && checkDate(data: data)){
-                    let novoLembrete = LembreteModel(_id: lembrete._id,
+                    let novoLembrete = Reminder(_id: lembrete._id,
                                                      nome: nome,
                                                      descricao: descricao,
                                                      data: formatDate(date: data),
                                                      status: true)
-                    lembretes.putLembretes(lembrete: novoLembrete)
+                    viewModel.update(novoLembrete)
                 }
                 alerta = true
             }//:BUTTON
@@ -152,10 +152,6 @@ struct EditTask: View {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         return dateFormatter.string(from: date)
     }
-    
-    
-    
-
 }//:VIEW
 
 
@@ -164,7 +160,7 @@ struct EditTask: View {
 
 struct EditTask_Previews: PreviewProvider {
     static var previews: some View {
-        let placeholder = LembreteModel(_id: "Id teste", nome: "teste",descricao: "teste" ,data: "30-07-2002 04:32", status: true)
+        let placeholder = Reminder(_id: "Id teste", nome: "teste",descricao: "teste" ,data: "30-07-2002 04:32", status: true)
         EditTask(lembrete : placeholder)
     }
 }

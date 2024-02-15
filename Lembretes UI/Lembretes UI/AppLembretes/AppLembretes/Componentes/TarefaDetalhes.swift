@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TarefaDetalhes: View {
-    var lembrete : LembreteModel
+    var lembrete : Reminder
     var body: some View {
         return ZStack {
             
@@ -83,7 +83,7 @@ struct TarefaDetalhes: View {
 struct TarefaDetalhes_Previews: PreviewProvider {
     static var previews: some View {
         
-        let placeholder = LembreteModel(_id: "Id teste", nome: "teste",descricao: "teste" ,data: "30-07-2002", status: true)
+        let placeholder = Reminder(_id: "Id teste", nome: "teste",descricao: "teste" ,data: "30-07-2002", status: true)
         TarefaDetalhes(lembrete : placeholder)
     }
 }

@@ -12,7 +12,7 @@ import SwiftUI
 struct AddTask: View {
     
     //MARK: VARIAVEIS
-    @StateObject var lembretesModel = ViewModelLembrete()
+    @StateObject var lembretesModel = ViewModel()
     @State private var nome = ""
     @State private var descricao = ""
     @State private var data = Date()
@@ -65,16 +65,14 @@ struct AddTask: View {
             
             //MARK: ENVIAR DADOS
             Button {
-                //Verificar se os dados são validos
-                
                 
                 if(checkNome(nome: nome) && checkDate(data: data)){
-                    let novoLembrete = LembreteModel(_id: UUID().uuidString,
+                    let novoLembrete = Reminder(_id: UUID().uuidString,
                                                      nome: nome,
                                                      descricao: descricao,
                                                      data: formatDate(date: data),
                                                      status: true)
-                    lembretesModel.postLembretes(lembrete: novoLembrete)
+                    ReminderManager.saveRecipe(novoLembrete)
                     
                 }
                 alerta = true

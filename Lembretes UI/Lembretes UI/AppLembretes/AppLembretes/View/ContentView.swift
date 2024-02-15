@@ -11,9 +11,6 @@ struct ContentView: View {
     @State private var isShowingSheet: Bool = false
     var body: some View {
         NavigationStack{
-            
-            
-            
             VStack(alignment: .leading) {
                 VStack {
                     //MARK: Titulo
@@ -23,17 +20,10 @@ struct ContentView: View {
                         .foregroundColor(Color.blue)
                         .multilineTextAlignment(.center)
                         .padding(.top, 24.0)
-                    
-                    
                     Spacer()
-                    
-                    
                     //MARK: Lista de lembrete
                     TaskList()
                         .padding()
-                    
-                    
-                    
                     //MARK: Adicionar lembrete
                     NavigationLink(destination: AddTask()){
                         // ACTION: Show a Sheet
@@ -46,13 +36,9 @@ struct ContentView: View {
                             .multilineTextAlignment(.center)
                             .lineLimit(0)
                             .padding()
-                        
                         Spacer()
                     }
                     .accessibilityIdentifier("Adicionar lembretes")
-
-                    
-                    
                 }
                 
             }

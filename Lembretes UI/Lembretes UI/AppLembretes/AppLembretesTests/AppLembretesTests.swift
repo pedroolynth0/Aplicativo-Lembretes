@@ -37,12 +37,12 @@ class ViewModelLembreteTests: XCTestCase {
 
     // Teste para a função getLembretes()
     func testGetLembretes() {
-        let viewModel = ViewModelLembrete()
+        let viewModel = ViewModel()
         let mockSession = MockURLSession()
         
         
         // Crie um lembrete mock (de teste) para ser retornado pelo mockSession
-        let mockLembrete = LembreteModel(_id: "1", nome: "Lembrete de teste", descricao: "Descrição do lembrete de teste", data: "2023-07-20", status: true)
+        let mockLembrete = Reminder(_id: "1", nome: "Lembrete de teste", descricao: "Descrição do lembrete de teste", data: "2023-07-20", status: true)
         let mockData = try? JSONEncoder().encode([mockLembrete])
 
         mockSession.data = mockData
@@ -50,7 +50,7 @@ class ViewModelLembreteTests: XCTestCase {
             guard let data = data else {
                 return
             }
-            viewModel.chars = try! JSONDecoder().decode([LembreteModel].self, from: data)
+            viewModel.chars = try! JSONDecoder().decode([Reminder].self, from: data)
         }
         mockDataTask.resume()
 
@@ -59,12 +59,12 @@ class ViewModelLembreteTests: XCTestCase {
     }
     // Teste para a função putLembretes()
     func testPutLembretes() {
-        let viewModel = ViewModelLembrete()
+        let viewModel = ViewModel()
         let mockSession = MockURLSession()
         
 
         // Crie um lembrete mock para ser atualizado
-        let mockLembrete = LembreteModel(_id: "1", nome: "Lembrete de teste", descricao: "Descrição do lembrete de teste", data: "2023-07-20", status: true)
+        let mockLembrete = Reminder(_id: "1", nome: "Lembrete de teste", descricao: "Descrição do lembrete de teste", data: "2023-07-20", status: true)
 
         // Configura o mockSession para não retornar dados 
         mockSession.data = nil
@@ -73,11 +73,11 @@ class ViewModelLembreteTests: XCTestCase {
     }
     // Teste para a função deleteLembretes()
     func testDeleteLembretes() {
-        let viewModel = ViewModelLembrete()
+        let viewModel = ViewModel()
         let mockSession = MockURLSession()
         
         // Crie um lembrete mock para ser removido
-        let mockLembrete = LembreteModel(_id: "1", nome: "Lembrete de teste", descricao: "Descrição do lembrete de teste", data: "2023-07-20", status: true)
+        let mockLembrete = Reminder(_id: "1", nome: "Lembrete de teste", descricao: "Descrição do lembrete de teste", data: "2023-07-20", status: true)
         
             
         // Configura o mockSession para não retornar dados
@@ -93,12 +93,12 @@ class ViewModelLembreteTests: XCTestCase {
 
     // Teste para a função postLembretes()
     func testPostLembretes() {
-        let viewModel = ViewModelLembrete()
+        let viewModel = ViewModel()
         let mockSession = MockURLSession()
         
 
         // Crie um lembrete mock para ser criado
-        let mockLembrete = LembreteModel(_id: "1", nome: "Lembrete de teste", descricao: "Descrição do lembrete de teste", data: "2023-07-20", status: true)
+        let mockLembrete = Reminder(_id: "1", nome: "Lembrete de teste", descricao: "Descrição do lembrete de teste", data: "2023-07-20", status: true)
 
         // Configura o mockSession para não retornar dados
         mockSession.data = nil
@@ -109,8 +109,8 @@ class ViewModelLembreteTests: XCTestCase {
 }
 
 
-extension LembreteModel: Equatable {
-    public static func == (lhs: LembreteModel, rhs: LembreteModel) -> Bool {
+extension Reminder: Equatable {
+    public static func == (lhs: Reminder, rhs: Reminder) -> Bool {
         return lhs._id == rhs._id
     }
 }

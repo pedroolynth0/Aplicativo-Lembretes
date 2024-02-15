@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct TaskList: View {
-    @StateObject var lembretes = ViewModelLembrete()
-
+    @StateObject var viewModel = ViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading) {
-                        ForEach(lembretes.groupLembretesByDate().orderedKeys, id: \.self) { key in
+                        
+                        ForEach(viewModel.groupLembretesByDate().orderedKeys, id: \.self) { key in
                             
-
+                            
                             VStack(alignment: .leading) {
                                 //MARK: DATA TITULO
                                 Text(key)
@@ -30,28 +31,24 @@ struct TaskList: View {
                                 
                                 
                                 // FOR LEMBRETES
-                                ForEach(lembretes.groupLembretesByDate()[key]!, id: \._id) { lembrete in
+                                ForEach(viewModel.groupLembretesByDate()[key]!, id: \._id) { lembrete in
                                     NavigationLink(destination: TarefaDetalhes(lembrete : lembrete)){
                                         
                                         
                                         //MARK: EXCLUIR LEMBRETE
                                         HStack{
                                             Button {
-                                                lembretes.deleteLembretes(lembrete: lembrete)
-                                                
+                                                viewModel.delete(lembrete._id)
                                             }
                                         label: {
-                                                Image(systemName: "minus.circle")
-                                                    .foregroundColor(.red)
-                                                    .padding()
-                                            }
+                                            Image(systemName: "minus.circle")
+                                                .foregroundColor(.red)
+                                                .padding()
+                                        }
                                             //:EXCLUIR LEMBRETE
                                             
                                             //:MARK: CARD LEMBRETE
                                             VStack(alignment: .leading){
-                                                
-                                                
-                                                
                                                 //MARK: -. NOME
                                                 HStack{
                                                     Text(lembrete.nome).font(.subheadline).fontWeight(.semibold).foregroundColor(Color.gray)
@@ -68,59 +65,30 @@ struct TaskList: View {
                                                         .fontWeight(.light)
                                                         .font(.subheadline)
                                                         .multilineTextAlignment(.leading)
-                                                        
-                                                        
+                                                    
+                                                    
                                                     Spacer()
                                                     NavigationLink(destination: EditTask(lembrete: lembrete)) {
-                                                                        Image(systemName: "pencil.circle")
-                                                                    }
-                                                                    .foregroundColor(.yellow)
-                                                                    .frame(width: 50)
-                                                                    .padding(.bottom)
-                                                }//:HSTACK
-
-                                            }//:VSTACK
-                                        }//:HSTACK
+                                                        Image(systemName: "pencil.circle")
+                                                    }
+                                                    .foregroundColor(.yellow)
+                                                    .frame(width: 50)
+                                                    .padding(.bottom)
+                                                }
+                                            }
+                                        }
                                         .background(Color((UIColor.systemGray6)))
                                         .cornerRadius(20)
                                     }
                                 }
-                            }//:VSTACK
-                        }//:FOR
-                    }//:VSTACK
+                            }
+                        }
+                    }
                     .padding(.horizontal, 20)
-                }//:SCROLLVIEW
-            }//:ZSTACK
-        }//:NavigationStack
-        .onAppear { lembretes.getLembretes() }
-    }//:BODY
-}//:VIEW
-
-
-//MARK: AGRUPAR LEMBRETES
-extension ViewModelLembrete {
-    func groupLembretesByDate() -> OrderedDictionary<String, [LembreteModel]> {
-        var groupedLembretes: OrderedDictionary<String, [LembreteModel]> = OrderedDictionary()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
-
-        for lembrete in chars {
-            if let date = dateFormatter.date(from: lembrete.data) {
-                let calendar = Calendar.current
-                let components = calendar.dateComponents([.year, .month, .day], from: date)
-                let formattedDate = "\(components.day!)/\(components.month!)/\(components.year!)"
-
-                if var lembretesArray = groupedLembretes[formattedDate] {
-                    lembretesArray.append(lembrete)
-                    groupedLembretes[formattedDate] = lembretesArray
-                } else {
-                    groupedLembretes[formattedDate] = [lembrete]
                 }
             }
+            .onAppear{viewModel.getData()}
         }
-
-
-        return groupedLembretes
     }
 }
 

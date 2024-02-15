@@ -18,9 +18,11 @@
 		8179773F2A6719E50082A5A0 /* AppLembretesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179773E2A6719E50082A5A0 /* AppLembretesUITests.swift */; };
 		817977412A6719E50082A5A0 /* AppLembretesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817977402A6719E50082A5A0 /* AppLembretesUITestsLaunchTests.swift */; };
 		8179778C2A6726640082A5A0 /* AddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179778B2A6726640082A5A0 /* AddTask.swift */; };
-		817977932A6742C30082A5A0 /* ModelLembrete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817977922A6742C30082A5A0 /* ModelLembrete.swift */; };
+		817977932A6742C30082A5A0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817977922A6742C30082A5A0 /* ViewModel.swift */; };
 		817977952A67475B0082A5A0 /* TarefaDetalhes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817977942A67475B0082A5A0 /* TarefaDetalhes.swift */; };
 		81A3A8382A68647500B3AD22 /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A8372A68647500B3AD22 /* EditTask.swift */; };
+		B7D176252B7D7D9400BF14AD /* ReminderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D176242B7D7D9400BF14AD /* ReminderManager.swift */; };
+		B7D176272B7E859E00BF14AD /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D176262B7E859E00BF14AD /* Reminder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +58,11 @@
 		8179773E2A6719E50082A5A0 /* AppLembretesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLembretesUITests.swift; sourceTree = "<group>"; };
 		817977402A6719E50082A5A0 /* AppLembretesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLembretesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8179778B2A6726640082A5A0 /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
-		817977922A6742C30082A5A0 /* ModelLembrete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLembrete.swift; sourceTree = "<group>"; };
+		817977922A6742C30082A5A0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		817977942A67475B0082A5A0 /* TarefaDetalhes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefaDetalhes.swift; sourceTree = "<group>"; };
 		81A3A8372A68647500B3AD22 /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; };
+		B7D176242B7D7D9400BF14AD /* ReminderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderManager.swift; sourceTree = "<group>"; };
+		B7D176262B7E859E00BF14AD /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 			children = (
 				817977282A6719E50082A5A0 /* AppLembretes.entitlements */,
 				817977262A6719E50082A5A0 /* Assets.xcassets */,
+				B7D176232B7D7D5900BF14AD /* Controller */,
 				817977912A67429E0082A5A0 /* Model */,
 				817977892A6726150082A5A0 /* View */,
 				8179778A2A67263C0082A5A0 /* Componentes */,
@@ -177,9 +182,18 @@
 		817977912A67429E0082A5A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				817977922A6742C30082A5A0 /* ModelLembrete.swift */,
+				817977922A6742C30082A5A0 /* ViewModel.swift */,
+				B7D176262B7E859E00BF14AD /* Reminder.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B7D176232B7D7D5900BF14AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7D176242B7D7D9400BF14AD /* ReminderManager.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,8 +327,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				814C2FC22A695F07003A94F6 /* TaskList.swift in Sources */,
+				B7D176252B7D7D9400BF14AD /* ReminderManager.swift in Sources */,
+				B7D176272B7E859E00BF14AD /* Reminder.swift in Sources */,
 				814C2FC92A69C882003A94F6 /* Card.swift in Sources */,
-				817977932A6742C30082A5A0 /* ModelLembrete.swift in Sources */,
+				817977932A6742C30082A5A0 /* ViewModel.swift in Sources */,
 				814C2FC72A699336003A94F6 /* Dicionario.swift in Sources */,
 				817977952A67475B0082A5A0 /* TarefaDetalhes.swift in Sources */,
 				81A3A8382A68647500B3AD22 /* EditTask.swift in Sources */,
@@ -475,7 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppLembretes/Preview Content\"";
-				DEVELOPMENT_TEAM = J8J9A839Z5;
+				DEVELOPMENT_TEAM = 3BAU9Z8SCU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -494,7 +510,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pedro.AppLembretes;
+				PRODUCT_BUNDLE_IDENTIFIER = pedro.olyntho.AppLembretes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -513,7 +529,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppLembretes/Preview Content\"";
-				DEVELOPMENT_TEAM = J8J9A839Z5;
+				DEVELOPMENT_TEAM = 3BAU9Z8SCU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -532,7 +548,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pedro.AppLembretes;
+				PRODUCT_BUNDLE_IDENTIFIER = pedro.olyntho.AppLembretes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
